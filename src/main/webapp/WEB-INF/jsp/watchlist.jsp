@@ -20,6 +20,7 @@
 <sql:query var="listMovies" dataSource="${myDS}">
     SELECT
           w.title as watchlist
+        , w.watchlist_id as id
         , m.title
         , m.year
         , m.genre
@@ -39,6 +40,7 @@
         <caption><h2>This is the Joint Watchlist of Group 3</h2></caption>
         <tr>
             <th>Watchlist</th>
+            <th>Id</th>
             <th>Title</th>
             <th>Year</th>
             <th>Genre</th>
@@ -50,6 +52,7 @@
         <c:forEach var="movie" items="${listMovies.rows}">
             <tr>
                 <td><c:out value="${movie.watchlist}" /></td>
+                <td><c:out value="${movie.id}" /></td>
                 <td><c:out value="${movie.title}" /></td>
                 <td><c:out value="${movie.year}" /></td>
                 <td><c:out value="${movie.genre}" /></td>
