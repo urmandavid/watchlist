@@ -18,7 +18,7 @@
 />
 
 <sql:query var="listMovies" dataSource="${myDS}">
-    SELECT original_title, year, genre, duration, director, avg_vote FROM movies;
+    SELECT title, year, genre, duration, director, rating FROM movies;
 </sql:query>
 
 <div align="center">
@@ -40,7 +40,7 @@
                 <td><c:out value="${movie.genre}" /></td>
                 <td><c:out value="${movie.duration}" /></td>
                 <td><c:out value="${movie.director}" /></td>
-                <td><c:out value="${movie.avg_vote}" /></td>
+                <td><c:out value="${movie.rating}" /></td>
             </tr>
         </c:forEach>
     </table>

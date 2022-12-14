@@ -136,11 +136,4 @@ public class Movie {
         this.rating = rating;
     }
 
-    public Boolean getWatched() {
-        return watched;
-    }
-
-    public void setWatched(Boolean watched) {
-        this.watched = watched;
-    }
 }
