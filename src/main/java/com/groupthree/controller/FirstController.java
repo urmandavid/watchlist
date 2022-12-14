@@ -9,7 +9,11 @@ public class FirstController {
 
     @RequestMapping("/imdb")
     public ModelAndView firstPage() {
-
         return new ModelAndView("welcome");
+    }
+
+    @RequestMapping("/watchlist")
+    public ModelAndView secondPage() {
+        return new ModelAndView("watchlist");
     }
 }

@@ -18,14 +18,27 @@
 />
 
 <sql:query var="listMovies" dataSource="${myDS}">
-    SELECT title, year, genre, duration, director, rating
-    FROM movies;
+    SELECT
+          w.title as watchlist
+        , m.title
+        , m.year
+        , m.genre
+        , m.duration
+        , m.director
+        , m.rating
+    FROM movies m
+    INNER JOIN watchlists_movies wm
+        ON m.id=wm.movies_id
+    INNER JOIN watchlists w
+        ON w.watchlist_id=wm.watchlist_watchlist_id
+    ORDER BY w.title;
 </sql:query>
 
 <div align="center">
     <table border="1" cellpadding="5">
-        <caption><h2>List of movies</h2></caption>
+        <caption><h2>This is the Joint Watchlist of Group 3</h2></caption>
         <tr>
+            <th>Watchlist</th>
             <th>Title</th>
             <th>Year</th>
             <th>Genre</th>
@@ -36,6 +49,7 @@
         </tr>
         <c:forEach var="movie" items="${listMovies.rows}">
             <tr>
+                <td><c:out value="${movie.watchlist}" /></td>
                 <td><c:out value="${movie.title}" /></td>
                 <td><c:out value="${movie.year}" /></td>
                 <td><c:out value="${movie.genre}" /></td>
