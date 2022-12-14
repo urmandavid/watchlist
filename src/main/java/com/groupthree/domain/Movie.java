@@ -5,7 +5,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "movie")
+@Table(name = "movies")
 public class Movie {
 
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -13,26 +13,24 @@ public class Movie {
     private int id;
 
     @Schema(description = "Title")
-    //@Column(name = "title")
     private String title;
 
-    @Schema(description = "Release Year")
-    //@Column(name = "release_year")
-    private int releaseYear;
+    @Schema(description = "year")
+    private int year;
+
     @Schema(description = "Genre")
-    //@Column(name = "genre")
     private String genre;
+
     @Schema(description = "Director")
-    //@Column(name = "director")
     private String director;
+
     @Schema(description = "Actors")
-    //@Column(name = "actor")
     private String actors;
+
     @Schema(description = "Description")
-    //@Column(name = "description")
     private String description;
+
     @Schema(description = "Rating")
-    //@Column(name = "rating")
     private double rating;
     /*    @Schema(description = "Priority")
         //@Column(name = "prio")
@@ -43,14 +41,14 @@ public class Movie {
 
     public Movie() {}
 
-    public Movie(String title, int releaseYear) {
+    public Movie(String title, int year) {
         this.title = title;
-        this.releaseYear = releaseYear;
+        this.year = year;
     }
 
     public Movie(String title, int releaseYear, String genre, String director, String actors, String description, double rating, Boolean watched) {
         this.title = title;
-        this.releaseYear = releaseYear;
+        this.year = year;
         this.genre = genre;
         this.director = director;
         this.actors = actors;
@@ -60,10 +58,10 @@ public class Movie {
         this.watched = watched;
     }
 
-    public Movie(int id, String title, int releaseYear, String genre, String director, String actors, String description, double rating, int priority, Boolean watched) {
+    public Movie(int id, String title, int year, String genre, String director, String actors, String description, double rating) {
         this.id = id;
         this.title = title;
-        this.releaseYear = releaseYear;
+        this.year = year;
         this.genre = genre;
         this.director = director;
         this.actors = actors;
@@ -90,12 +88,12 @@ public class Movie {
         this.title = title;
     }
 
-    public int getReleaseYear() {
-        return releaseYear;
+    public int getYear() {
+        return year;
     }
 
-    public void setReleaseYear(int releaseYear) {
-        this.releaseYear = releaseYear;
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public String getGenre() {
