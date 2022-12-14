@@ -32,12 +32,7 @@ public class Movie {
 
     @Schema(description = "Rating")
     private double rating;
-    /*    @Schema(description = "Priority")
-        //@Column(name = "prio")
-        private int priority;*/
-    @Schema(description = "Watched")
-    //@Column(name = "watched")
-    private Boolean watched = false;
+
 
     public Movie() {}
 
@@ -46,7 +41,7 @@ public class Movie {
         this.year = year;
     }
 
-    public Movie(String title, int releaseYear, String genre, String director, String actors, String description, double rating, Boolean watched) {
+    public Movie(String title, int year, String genre, String director, String actors, String description, double rating) {
         this.title = title;
         this.year = year;
         this.genre = genre;
@@ -54,8 +49,6 @@ public class Movie {
         this.actors = actors;
         this.description = description;
         this.rating = rating;
-        //.priority = priority;
-        this.watched = watched;
     }
 
     public Movie(int id, String title, int year, String genre, String director, String actors, String description, double rating) {
@@ -67,8 +60,6 @@ public class Movie {
         this.actors = actors;
         this.description = description;
         this.rating = rating;
-        //this.priority = priority;
-        this.watched = watched;
     }
 
     public int getId() {
