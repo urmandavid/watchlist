@@ -34,7 +34,11 @@
         ON w.watchlist_id=wm.watchlist_watchlist_id
     ORDER BY w.title;
 </sql:query>
-
+<div>
+    <a href="http://localhost:8080/imdb">Home</a>
+    <a href="http://localhost:8080/watchlist">Watchlist</a>
+    <a href="http://localhost:8080/swagger">Swagger</a>
+</div>
 <div align="center">
     <table border="1" cellpadding="5">
         <caption><h2>This is the Joint Watchlist of Group 3</h2></caption>

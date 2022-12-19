@@ -21,10 +21,14 @@
     SELECT title, year, genre, duration, director, rating
     FROM movies;
 </sql:query>
-
+<div>
+    <a href="http://localhost:8080/imdb">Home</a>
+    <a href="http://localhost:8080/watchlist">Watchlist</a>
+    <a href="http://localhost:8080/swagger">Swagger</a>
+</div>
 <div align="center">
     <table border="1" cellpadding="5">
-        <caption><h2>List of movies</h2></caption>
+        <caption><h2>Welcome to the IMDB Top 100 database!</h2></caption>
         <tr>
             <th>Title</th>
             <th>Year</th>

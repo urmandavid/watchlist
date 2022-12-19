@@ -8,14 +8,14 @@ import javax.persistence.*;
 @Table(name = "movies")
 public class Movie {
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private int id;
 
     @Schema(description = "Title")
     private String title;
 
-    @Schema(description = "year")
+    @Schema(description = "Year")
     private int year;
 
     @Schema(description = "Genre")
@@ -69,7 +69,6 @@ public class Movie {
     public void setId(int id) {
         this.id = id;
     }
-
 
     public String getTitle() {
         return title;

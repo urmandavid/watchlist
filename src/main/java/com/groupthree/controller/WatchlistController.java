@@ -24,15 +24,6 @@ public class WatchlistController {
     @Autowired
     private MovieRepository movieRepository;
 
-/*    @PostMapping(value = "create")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Watchlist createWatchlist(@RequestBody Watchlist watchlist) {
-        return this.watchlistRepository.save(watchlist);
-    }*/
-
-
-
-    //problem med att skapa två watchlists med samma namn get by title fuckar ur
     @ApiResponses(value = {
             @ApiResponse(responseCode = "201", description = "Successfully created watchlist",
                     content = @Content(mediaType = "application/json", schema = @Schema(implementation = Watchlist.class))),

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MovieRepository extends JpaRepository <Movie, Integer> {
-    public Movie findByTitle(String title);
 
     @Query(value = "SELECT DISTINCT m FROM Movie m WHERE m.title IN :title")
     Movie findMovieByTitle(@Param("title") String title);

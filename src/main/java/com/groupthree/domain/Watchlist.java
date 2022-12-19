@@ -15,7 +15,6 @@ public class Watchlist {
     private int watchlistId;
 
     @Schema(description = "Title")
-    //@Column(name = "title")
     private String title;
 
     @ManyToMany(cascade = CascadeType.MERGE)
